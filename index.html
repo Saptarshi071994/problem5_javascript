@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Current Time</title>
+</head>
+<body>
+  <h1>Current Time</h1>
+  <p id="time12"></p>
+  <p id="time24"></p>
+
+  <script>
+    function updateTime() {
+      var now = new Date();
+
+      var formattedTime12 = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true});
+      
+      
+      var formattedTime24 = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false});
+
+      
+      document.getElementById('time12').textContent = "12-hour format: " + formattedTime12;
+      document.getElementById('time24').textContent = "24-hour format: " + formattedTime24;
+    }
+
+
+    updateTime();
+
+    
+    setInterval(updateTime, 1000);
+  </script>
+</body>
+</html>

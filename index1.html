@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="TextBoxContainer">
+        <input id="btnAdd" type="button" value="add" onclick="AddTextBox()" />
+        <button onclick="myFunction()">SUBMIT</button>
+    </div>
+    <script>
+        
+        function GetDynamicTextBox(value){
+            return '<input name = "DynamicTextBox" type="text" value = "' + value + '" />' +
+            '<input type="button" value="add" onclick = "AddTextBox(this)" />' 
+        }
+        function AddTextBox() {
+            var div = document.createElement('DIV');
+            div.innerHTML = GetDynamicTextBox("");
+            document.getElementById("TextBoxContainer").appendChild(div); 
+        }
+    </script>
+</body>
+</html>
